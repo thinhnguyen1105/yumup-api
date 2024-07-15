@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "settings",
+  "info": {
+    "singularName": "setting",
+    "pluralName": "settings",
+    "displayName": "Setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "section": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "string"
+    },
+    "ListStatistic": {
+      "displayName": "Statistic Number",
+      "type": "component",
+      "repeatable": true,
+      "component": "statistic-number.statistic-number"
+    },
+    "page": {
+      "type": "enumeration",
+      "enum": [
+        "main",
+        "homepage",
+        "about",
+        "channel",
+        "contact",
+        "headline"
+      ],
+      "required": true
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "gallery": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

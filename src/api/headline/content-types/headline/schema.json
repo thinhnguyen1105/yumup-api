@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "headlines",
+  "info": {
+    "singularName": "headline",
+    "pluralName": "headlines",
+    "displayName": "Headline",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "required": false,
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
