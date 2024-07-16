@@ -57,12 +57,18 @@
       "type": "string"
     },
     "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "sort": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     }
   }
 }

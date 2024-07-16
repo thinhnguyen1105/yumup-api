@@ -924,6 +924,7 @@ export interface ApiSettingSetting extends Schema.CollectionType {
     background: Attribute.Media<'images' | 'videos'>;
     title: Attribute.String;
     gallery: Attribute.Media<'images' | 'videos', true>;
+    sort: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
