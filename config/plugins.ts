@@ -1,4 +1,13 @@
 export default ({ env }) => {
+  console.log('Environment variables:', {
+    AWS_ACCESS_KEY_ID: env("AWS_ACCESS_KEY_ID"),
+    AWS_ACCESS_SECRET: env("AWS_ACCESS_SECRET"),
+    AWS_REGION: env("AWS_REGION"),
+    AWS_ACL: env("AWS_ACL"),
+    AWS_SIGNED_URL_EXPIRES: env("AWS_SIGNED_URL_EXPIRES"),
+    AWS_BUCKET: env("AWS_BUCKET"),
+  });
+
   return {
     upload: {
       config: {
@@ -14,34 +23,9 @@ export default ({ env }) => {
           },
         },
         debug: true,
-        // Thêm cấu hình cho video
-        breakpoints: {
-          xlarge: 1920,
-          large: 1000,
-          medium: 750,
-          small: 500,
-          xsmall: 64,
-        },
-        // Tăng kích thước tối đa cho phép upload
-        sizeLimit: 1024 * 1024 * 1024, // 1GB
-        // Thêm các định dạng video được phép
-        extensions: [".mp4", ".avi", ".mov", ".wmv", ".flv"],
-        mimeTypes: [
-          "video/mp4",
-          "video/avi",
-          "video/quicktime",
-          "video/x-ms-wmv",
-          "video/x-flv",
-        ],
         actionOptions: {
-          upload: {
-            // Tăng thời gian timeout cho upload
-            timeout: 60000 * 60, // 1 giờ
-          },
-          uploadStream: {
-            // Tăng kích thước chunk cho stream upload
-            chunkSize: 1024 * 1024 * 5, // 5MB per chunk
-          },
+          upload: {},
+          uploadStream: {},
           delete: {},
         },
       },
