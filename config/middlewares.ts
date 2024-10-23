@@ -20,6 +20,8 @@ export default [
             "blob:",
             "dl.airtable.com",
             `${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com`,
+            // Thêm định dạng video
+            "https:",
           ],
           upgradeInsecureRequests: null,
         },

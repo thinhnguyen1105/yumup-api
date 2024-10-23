@@ -23,9 +23,34 @@ export default ({ env }) => {
           },
         },
         debug: true,
+        // Thêm cấu hình cho video
+        breakpoints: {
+          xlarge: 1920,
+          large: 1000,
+          medium: 750,
+          small: 500,
+          xsmall: 64
+        },
+        // Tăng kích thước tối đa cho phép upload
+        sizeLimit: 1024 * 1024 * 1024, // 1GB
+        // Thêm các định dạng video được phép
+        extensions: ['.mp4', '.avi', '.mov', '.wmv', '.flv'],
+        mimeTypes: [
+          'video/mp4',
+          'video/avi',
+          'video/quicktime',
+          'video/x-ms-wmv',
+          'video/x-flv'
+        ],
         actionOptions: {
-          upload: {},
-          uploadStream: {},
+          upload: {
+            // Tăng thời gian timeout cho upload
+            timeout: 60000 * 60, // 1 giờ
+          },
+          uploadStream: {
+            // Tăng kích thước chunk cho stream upload
+            chunkSize: 1024 * 1024 * 5, // 5MB per chunk
+          },
           delete: {},
         },
       },
