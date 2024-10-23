@@ -20,7 +20,6 @@ export default [
             "blob:",
             "dl.airtable.com",
             `${process.env.AWS_BUCKET}.s3.${process.env.AWS_REGION}.amazonaws.com`,
-            // Thêm định dạng video
             "https:",
           ],
           upgradeInsecureRequests: null,
@@ -28,9 +27,20 @@ export default [
       },
     },
   },
-  "strapi::cors",
+  {
+    name: "strapi::cors",
+    config: {
+      enabled: true,
+      headers: "*",
+    },
+  },
   "strapi::poweredBy",
-  "strapi::logger",
+  {
+    name: "strapi::logger",
+    config: {
+      level: "debug",
+    },
+  },
   "strapi::query",
   "strapi::body",
   "strapi::session",
