@@ -1,14 +1,4 @@
 export default ({ env }) => {
-  // Log environment variables (redacted for security)
-  console.log('Environment variables:', {
-    AWS_ACCESS_KEY_ID: env("AWS_ACCESS_KEY_ID") ? '****' : 'not set',
-    AWS_ACCESS_SECRET: env("AWS_ACCESS_SECRET") ? '****' : 'not set',
-    AWS_REGION: env("AWS_REGION"),
-    AWS_ACL: env("AWS_ACL"),
-    AWS_SIGNED_URL_EXPIRES: env("AWS_SIGNED_URL_EXPIRES"),
-    AWS_BUCKET: env("AWS_BUCKET"),
-  });
-
   const awsConfig = {
     s3Options: {
       accessKeyId: env("AWS_ACCESS_KEY_ID"),
