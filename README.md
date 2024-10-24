@@ -29,7 +29,7 @@ Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-
 ```
 npm run build
 # or
-yarn build
+yarn build 
 ```
 
 ## ⚙️ Deployment
